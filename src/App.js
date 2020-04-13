@@ -5,7 +5,7 @@ import { gql } from "apollo-boost";
 import {useQuery} from '@apollo/react-hooks';
 import { ApolloProvider } from '@apollo/react-hooks';
 
-import Liste from './Liste';
+import Liste from './components/Liste';
 
 
 const client = new ApolloClient({
