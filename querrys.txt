@@ -1,0 +1,18 @@
+//timeline for a country with cases...
+{
+  countries(names:["Germany"]){
+  name
+    results{
+      date
+      confirmed
+      deaths
+      recovered
+    }
+    mostRecent{
+      confirmed
+      deaths
+      recovered
+    }
+
+}
+}
