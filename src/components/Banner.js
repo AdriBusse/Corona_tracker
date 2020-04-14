@@ -28,11 +28,12 @@ export default function Banner() {
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
     </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a>Corona Cases: {numberWithCommas(allcases)}</a></li>
-        <li class="tab"><a>Active Cases: {numberWithCommas(activeCases)}</a></li>
-        <li class="tab"><a>Deaths: {numberWithCommas(alldeaths)}</a></li>
+    <div className="nav-content">
+      <ul className="tabs tabs-transparent">
+        <li className="tab"><a>Corona Cases: {numberWithCommas(allcases)}</a></li>
+        <li className="tab"><a>Active Cases: {numberWithCommas(activeCases)}</a></li>
+        <li className="tab"><a>Deaths: {numberWithCommas(alldeaths)}</a></li>
+        <li className="tab left"><a>Stay home!</a></li>
       </ul>
     </div>
   </nav>
