@@ -22,10 +22,10 @@ export default function Banner() {
 
     return (
         <div className="navbar-fixed "> 
-<nav class="nav-extended indigo darken-3">
+<nav className="nav-extended indigo darken-3">
     <div className="nav-wrapper">
       <a className="brand-logo center">Live Corona</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
 
     </div>
     <div className="nav-content">
