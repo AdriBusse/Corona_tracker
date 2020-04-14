@@ -6,6 +6,7 @@ import {useQuery} from '@apollo/react-hooks';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import Liste from './components/Liste';
+import Banner from './components/Banner';
 
 
 const client = new ApolloClient({
@@ -20,8 +21,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-    <div className="App">
-      <Liste/>
+    <div className="App grey lighten-1">
+      <Banner/>
+      <Liste className="container "/>
     </div>
     </ApolloProvider>
   );

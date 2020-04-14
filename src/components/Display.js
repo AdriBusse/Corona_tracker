@@ -39,9 +39,10 @@ function Display({d, r, c, country}){
 
         <div>
             {getFlag(isoCode)}
-            <h1>{country} has {numberWithCommas(c-r)} active Corona Cases</h1>     
-            <h2>{numberWithCommas(c)} cases at all</h2>
-            <h2>{numberWithCommas(d)} death cases</h2>
+            <h3>{country} has {numberWithCommas(c-r-d)} active Corona Cases</h3>     
+            <h4>{numberWithCommas(c)} cases at all</h4>
+            <h4>{numberWithCommas(d)} death cases</h4>
+            
         </div>
     )
 }

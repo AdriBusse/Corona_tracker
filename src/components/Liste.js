@@ -1,5 +1,4 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import Display from './Display';
 import {GetCountries} from '../querrys/querrys';
