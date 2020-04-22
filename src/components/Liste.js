@@ -1,29 +1,33 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import Display from './Display';
-import {GetCountries} from '../querrys/querrys';
-
-import countries from 'react-select-country-list'
+import React,{useContext} from 'react';
+import CountryCard from './CountryCard';
+import {GlobalContext} from '../context/GlobalState';
 
 
 
-function Liste(){
-    const { loading, error, data } = useQuery(GetCountries);
-    if (loading) return <p>Loading...</p>
-    if(error) return <p>error: {error}</p>
-    if(data){
-    data.countries.sort((a,b)=>{return b.mostRecent.confirmed-a.mostRecent.confirmed})
+
+
+
+function Liste(props){
+const {search} =useContext(GlobalContext);
+let displayedCountries = props.data.countries;
+
+    if (props.data == null){}else{
+        props.data.countries.sort((a,b)=>{return b.mostRecent.confirmed-a.mostRecent.confirmed})
+       
+        displayedCountries= displayedCountries.filter(x=>{return x.name.toLowerCase().includes(search) })
+        
+
     }
 return(
-    <div>
+    <div className="listcontainer">
         {
-            data.countries.map(data=>{
+            displayedCountries.map(data=>{
                 const recovered= data.mostRecent.recovered;
                 const confirmed= data.mostRecent.confirmed;
                 const country = data.name; 
                 const deaths= data.mostRecent.deaths;
                 return <div key={country}>
-                        <Display key={country} d={deaths} r={recovered} c={confirmed} country={country}/>
+                        <CountryCard key={country} d={deaths} r={recovered} c={confirmed} country={country}/>
                         <hr/>
                        </div>
             })

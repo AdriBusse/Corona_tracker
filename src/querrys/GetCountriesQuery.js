@@ -8,8 +8,6 @@ export const GetCountries = gql`
       confirmed
       deaths
       recovered
-      recovered
-      
     }
 
 }

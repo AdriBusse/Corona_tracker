@@ -1,13 +1,12 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
+
 
 import countries from 'react-select-country-list';
 import ReactCountryFlag from "react-country-flag";
 import noFlag from '../utilitys/noFlag.png';
-import numberWithCommas from '../utilitys/numberWithCommas.js'
+import numberWithCommas from '../utilitys/numberWithCommas.js.js'
 
-function Display({d, r, c, country}){
+function CountryCard({d, r, c, country}){
 
 
       const isoCode=countries().getValue(country);
@@ -47,4 +46,4 @@ function Display({d, r, c, country}){
     )
 }
 
-export default Display;
+export default CountryCard;

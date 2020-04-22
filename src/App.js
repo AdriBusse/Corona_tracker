@@ -1,17 +1,15 @@
 import React from 'react';
-import './App.css';
-import ApolloClient from 'apollo-boost';
-import { gql } from "apollo-boost";
-import {useQuery} from '@apollo/react-hooks';
-import { ApolloProvider } from '@apollo/react-hooks';
 
+import {useQuery} from '@apollo/react-hooks';
+
+//components
 import Liste from './components/Liste';
 import Banner from './components/Banner';
+import Searchbar from './components/Searchbar';
 
 
-const client = new ApolloClient({
-  uri: 'https://covid19-graphql.now.sh/'
-});
+import {GetCountries} from './querrys/GetCountriesQuery';
+
 
 
 
@@ -19,13 +17,18 @@ const client = new ApolloClient({
 
 
 function App() {
+  const { loading, error, data } = useQuery(GetCountries);
+  if (loading) return <p>Loading...</p>
+  if(error) return <p>error: {error}</p>
   return (
-    <ApolloProvider client={client}>
-    <div className="App grey lighten-1">
-      <Banner/>
-      <Liste className="container "/>
+    <div className="grey lighten-1">
+      <Banner data={data}/>
+    <div className="App grey lighten-1 container">
+      <Searchbar className="center" data={data}/>
+      <Liste data={data} />
     </div>
-    </ApolloProvider>
+    </div>
+
   );
 }
 
